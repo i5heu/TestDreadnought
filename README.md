@@ -1,3 +1,4 @@
 # TestDreadnought
 
-![Dreadnought Demo](.media/demo.mp4)
+
+https://github.com/i5heu/TestDreadnought/assets/22565269/e8b5398a-e990-44e4-937c-d08638409c51
