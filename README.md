@@ -1,5 +1,8 @@
 # TestDreadnought
 
-![TestDreadnought Logo](.media/logo.webp)
+<p align="center">
+  <img src=".media/logo.webp"  width="350">
+</p>
+
 
 https://github.com/i5heu/TestDreadnought/assets/22565269/e8b5398a-e990-44e4-937c-d08638409c51
