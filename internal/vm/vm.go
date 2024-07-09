@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
+	"github.com/i5heu/TestDreadnought/extensions"
 	"github.com/i5heu/TestDreadnought/internal/client"
 	"github.com/i5heu/TestDreadnought/internal/config"
 	"github.com/robertkrimen/otto"
@@ -29,6 +30,9 @@ func InitializeVM(globalScript, testCaseParentFolder, configDir string) (*otto.O
 
 	// Set up the test function
 	SetUpTestFunction(vm, testCaseParentFolder, configDir)
+
+	// Set up extensions
+	extensions.SetUpExtensions(vm, testCaseParentFolder, configDir)
 
 	return vm, nil
 }
