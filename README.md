@@ -112,7 +112,7 @@ They are meant for more complex steps and time sensitive measurements, like perf
 We use Go Plugins for extensions since for a lot of tests JS is not precise enough or capable enough in a elegant way and without a lot of third party packages, which are a security risk.  
 
 To build an extension you need to create a `.go` file in the `extensions` folder, and build it to `extensions/out/extension.so`.
-The Plugin you are building must have a function that is called in the `SetUpExtensions` function.
+The Plugin you are building must have a function that is called `SetUpExtensions` and that needs these parameters `SetUpExtensions(vm *otto.Otto, testCaseParentFolder, configDir string)`.
 
 ```go
 // extensions/example.go
