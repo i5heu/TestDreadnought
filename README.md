@@ -60,6 +60,10 @@ var ThisIsTest = function () {
 console.log("Global settings loaded"); // This will be printed in the console before executing an test
 ```
 
+There must also be a `extensions.go` Plugin in the `extensions/out` folder.  
+You can copy a example one from the `test_example` folder.
+See the "Building your own extensions" section for more information.  
+
 ## Writing your first test
 
 TestDreadnought uses ES5 JavaScript as language for writing tests.  
