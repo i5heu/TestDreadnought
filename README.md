@@ -8,6 +8,10 @@ Highly adoptable test Framework for large and complex projects, that need a depe
 
 TestDreadnought is built for you to mold precisely to your project's demands, avoiding the one-size-fits-all approach. It sidesteps dependency issues and the security risks of excessive third-party packages, particularly from JS npm. With no forced structure or excessive rules, you get a clean, efficient, and secure testing environment that’s exactly suited to tackle your unique challenges.
 
+<p align="center">
+	  <img src=".media/demo.png"  width="720">
+</p>
+
 ## Install
 Since you need to build the extensions aka plugins in Go, you need to have Go installed on your machine. Make sure you have the `$GOPATH/bin` in your `$PATH` environment variable - See [instructions](https://stackoverflow.com/a/21012349).  
 
@@ -143,7 +147,3 @@ Now you can call the `ExampleHelloWorld` function in all your tests.
 // testRootDirectory/test/helloWorld.js
 console.log(ExampleHelloWorld("FooBar"))
 ```
-
-## Demo Video
-
-https://github.com/i5heu/TestDreadnought/assets/22565269/e8b5398a-e990-44e4-937c-d08638409c51
