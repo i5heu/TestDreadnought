@@ -202,3 +202,8 @@ Same as `console.log` but with a shorter name ✨.
 ```js
 Log("This is a log message")
 ```
+
+## License
+TestDreadnought (c) 2024 Mia Heidenstedt and contributors  
+   
+SPDX-License-Identifier: AGPL-3.0
