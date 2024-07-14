@@ -8,6 +8,16 @@ Highly adoptable test Framework for large and complex projects, that need a depe
 
 TestDreadnought is built for you to mold precisely to your project's demands, avoiding the one-size-fits-all approach. It sidesteps dependency issues and the security risks of excessive third-party packages, particularly from JS npm. With no forced structure or excessive rules, you get a clean, efficient, and secure testing environment that’s exactly suited to tackle your unique challenges.
 
+## ClI Usage
+There are 2 CLI options, the test-root-directory and the optional "subset path" that is relative to the test-root-directory.  
+If you provide no arguments, TestDreadnought will show this message:
+
+```bash
+$ TestDreadnought
+TestDreadnought Usage: TestDreadnought <test-root-directory> <optional: subset path relative to config-directory>
+```
+
+
 ## Setup
 There must be a `globalScript.js` file in the root directory of your test folder.  
 This script is called before any `.js` file in the test root directory and its subdirectories.  
