@@ -64,7 +64,7 @@ var ThisIsTest = function () {
 console.log("Global settings loaded"); // This will be printed in the console before executing an test
 ```
 
-There must also be a `extensions.go` Plugin in the `extensions/out` folder.  
+There must also be a `extensions.so` Golang Plugin in the `extensions/out` folder.  
 You can copy a example one from the `test_example` folder.
 See the "Building your own extensions" section for more information.  
 
