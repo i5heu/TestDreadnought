@@ -78,6 +78,42 @@ func SetUpClients(vm *otto.Otto, testCaseParentFolder string) {
 		return obj.Value()
 	})
 
+	// Define the get function
+	vm.Set("Get", func(call otto.FunctionCall) otto.Value {
+		url, _ := call.Argument(0).ToString()
+
+		// Get the headers
+		headers, err := config.GetHeaders(vm)
+		if err != nil {
+			cr.Println("	", err)
+			value, _ := otto.ToValue(fmt.Sprintf("Error: %s", err.Error()))
+			return value
+		}
+
+		// Get the base URL
+		baseUrl, err := config.GetBaseUrl(vm)
+		if err != nil {
+			cr.Println("	", err)
+			value, _ := otto.ToValue(fmt.Sprintf("Error: %s", err.Error()))
+			return value
+		}
+
+		resp, body, header, err := client.GetRequest(baseUrl, url, headers)
+		if err != nil {
+			c.Println("	GET request failed", err)
+			panic(vm.MakeCustomError("Error To Js", fmt.Sprintf("%s", err.Error())))
+		}
+
+		c.Println("	GET request successful")
+
+		// Create an otto.Object and set properties
+		obj, _ := vm.Object(`({})`)
+		_ = obj.Set("header", header)
+		_ = obj.Set("response", resp)
+		_ = obj.Set("body", body)
+
+		return obj.Value()
+	})
 }
 
 func SetUpTestFunction(vm *otto.Otto, testCaseParentFolder, configDir string) {

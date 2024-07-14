@@ -1,4 +1,4 @@
-settings = globalsettings;
+Settings = globalSettings;
 
 body = "this is the body yada yada";
 data = { body: body };

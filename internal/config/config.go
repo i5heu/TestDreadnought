@@ -24,18 +24,18 @@ func LoadScript(vm *otto.Otto, filePath string) error {
 
 // GetSettings retrieves the global settings from the VM.
 func GetSettings(vm *otto.Otto) (map[string]interface{}, error) {
-	settingsValue, err := vm.Get("settings")
+	settingsValue, err := vm.Get("Settings")
 	if err != nil {
-		return nil, fmt.Errorf("Error getting settings: %w", err)
+		return nil, fmt.Errorf("Error getting Settings: %w", err)
 	}
 
 	settings, err := settingsValue.Export()
 	if err != nil {
-		return nil, fmt.Errorf("Error exporting globalsettings: %w", err)
+		return nil, fmt.Errorf("Error exporting Settings: %w", err)
 	}
 
 	if settings == nil {
-		color.Red("	Warning: settings not found")
+		color.Red("	Warning: Settings not found")
 		return nil, nil
 	}
 
@@ -51,7 +51,7 @@ func GetHeaders(vm *otto.Otto) (map[string]string, error) {
 
 	headers, ok := settings["headers"]
 	if !ok {
-		color.Red("	Warning: Headers not found in settings")
+		color.Red("	Warning: Headers not found in Settings")
 		return make(map[string]string), nil
 	}
 

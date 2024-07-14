@@ -1,4 +1,4 @@
-var globalsettings = {
+var globalSettings = {
     baseUrl: "https://putsreq.com",
     headers: {
         "Origin": "https://echo.free.beeceptor.com"

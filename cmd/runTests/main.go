@@ -10,7 +10,7 @@ import (
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("Usage: go run main.go <config-directory> <optional: subset path relative to config-directory>")
+		fmt.Println("Usage: go run main.go <test-root-directory> <optional: subset path relative to config-directory>")
 		return
 	}
 

@@ -3,8 +3,18 @@
 
 package extensions
 
-import "github.com/robertkrimen/otto"
+import (
+	"github.com/fatih/color"
+	"github.com/robertkrimen/otto"
+)
 
 func SetUpExtensions(vm *otto.Otto, testCaseParentFolder, configDir string) {
 
+}
+
+func Log(a ...interface{}) (n int, err error) {
+	clr := color.New(color.FgCyan)
+	inter := []interface{}{"	Extention: "}
+	args := append(inter, a...)
+	return clr.Println(args...)
 }

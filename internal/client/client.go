@@ -2,6 +2,7 @@ package client
 
 import (
 	"fmt"
+	"net/http"
 
 	"github.com/go-resty/resty/v2"
 )
@@ -22,17 +23,17 @@ func PostRequest(baseUrl, url string, headers map[string]string, data interface{
 }
 
 // GetRequest performs a GET request with the given headers.
-func GetRequest(baseUrl, url string, headers map[string]string) (string, string, error) {
+func GetRequest(baseUrl, url string, headers map[string]string) (string, string, http.Header, error) {
 	client := resty.New()
 	resp, err := client.R().
 		SetHeaders(headers).
 		Get(baseUrl + url)
 
 	if err != nil {
-		return "", "", fmt.Errorf("Error making GET request: %w", err)
+		return "", "", nil, fmt.Errorf("Error making GET request: %w", err)
 	}
 
-	return resp.String(), string(resp.Body()), nil
+	return resp.String(), string(resp.Body()), resp.Header(), nil
 }
 
 // PatchRequest performs a PATCH request with the given headers and data.

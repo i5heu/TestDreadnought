@@ -23,7 +23,7 @@ func RunTests(configDir string, subSet string) error {
 		return err
 	}
 
-	globalScript := filepath.Join(configDir, "globalConfig.js")
+	globalScript := filepath.Join(configDir, "globalScript.js")
 
 	c := color.New(color.FgMagenta)
 
@@ -126,7 +126,7 @@ func GetListOfTestCases(globalScript string, subSet string) ([]TestCaseFileInfo,
 				return err
 			}
 
-			if info.Name() == "globalConfig.js" {
+			if info.Name() == "globalScript.js" {
 				return nil
 			}
 
