@@ -53,14 +53,27 @@ Lets write your first test, that will Get a request to the base URL of your API.
 // TestDreadnought it will test all .js files in all directories of the test folder,
 // unless you specify to test only a subset
 
-Settings = globalSettings; // This is the global variable from the globalScript.js file
+// This is the global variable from the globalScript.js file
+Settings = globalSettings; 
 
+// This will make a GET request to the base URL and the path /helloWorld using the headers defined in the Settings variable
 result = Get("/helloWorld");
 
 // This will print the result of the request to the console
 console.log("Cache-Control:", result.header["Cache-Control"]);  
 
 // if no error is thrown the test is successful
+```
+
+Note that the Settings variable is used by the Get function and all default client functions to get the base URL and headers.  
+The structure for this looks like this:
+```js
+Settings = {
+	baseUrl: "https://example.com",
+	headers: {
+		"Origin": "https://this.is.a.example.com"
+	}
+}
 ```
 
 For more examples checkout the `test_example` folder in this repository.
