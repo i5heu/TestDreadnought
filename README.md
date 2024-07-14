@@ -6,7 +6,9 @@
 
 Highly adoptable test Framework for large and complex projects, that need a dependency-conscious, secure and fast testing solution.  
 
-TestDreadnought is built for you to mold precisely to your project's demands, avoiding the one-size-fits-all approach. It sidesteps dependency issues and the security risks of excessive third-party packages, particularly from JS npm. With no forced structure or excessive rules, you get a clean, efficient, and secure testing environment that’s exactly suited to tackle your unique challenges.
+TestDreadnought is built for you to mold precisely to your project's demands, avoiding the one-size-fits-all approach. It sidesteps dependency issues and the security risks of excessive third-party packages, particularly from JS npm. With no forced structure for tests or excessive rules, you get a clean, efficient, and secure testing environment that’s exactly suited to tackle your unique challenges.
+
+Js is used for data routing, basic logic, and calling custom Go extensions for complex actions such as HTTP requests. This approach enables the creation of complex and precise tests that remain easy to write and understand, all without relying on third-party npm packages.
 
 Checkout the `test_example` folder for a example test setup.
 
