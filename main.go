@@ -9,6 +9,8 @@ import (
 )
 
 func main() {
+	fmt.Println("TestDreadnought", "v0.1.1")
+
 	if len(os.Args) < 2 {
 		fmt.Println("Usage: go run main.go <test-root-directory> <optional: subset path relative to config-directory>")
 		return
