@@ -147,3 +147,48 @@ Now you can call the `ExampleHelloWorld` function in all your tests.
 // testRootDirectory/test/helloWorld.js
 console.log(ExampleHelloWorld("FooBar"))
 ```
+
+## List of default functions
+
+### Get, Post, Patch, Delete
+Will use the Settings variable to get the base URL and headers.  
+
+```js
+result = Get("/path")
+result = Post("/path", {key: "value"})
+result = Patch("/path", {key: "value"})
+result = Delete("/path")
+```
+
+### ResultIsLikeFile
+
+Will compare Data with a file in the same directory as the test file.  
+You can see it working in the `test_example` folder.
+
+```js
+ResultIsLikeFile(result.body, "./GlobalResultExample.txt");
+```
+
+### ResultIsLikeGlobalFile
+
+Will compare Data with a file in the globalTestFiles directory of the test folder.  
+You can see it working in the `test_example` folder.
+
+```js
+ResultIsLikeGlobalFile(result.body, "./GlobalResultExample.txt");
+```
+
+### console.log
+Since we need to format the output and add color, `console.log` is a custom function that will do this for you.
+Pls note that `console.error`, `console.warn`, `console.info` and `console.debug` are not implemented yet and will result in a error.
+
+```js
+console.log("This is a log message")
+```
+
+### Log
+Same as `console.log` but with a shorter name ✨. 
+
+```js
+Log("This is a log message")
+```

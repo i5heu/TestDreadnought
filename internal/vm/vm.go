@@ -210,11 +210,15 @@ func formatForConsole(argumentList []otto.Value) string {
 func SetupConsoleLog(vm *otto.Otto) {
 	c := color.New(color.FgHiBlue)
 
+	logFunc := func(call otto.FunctionCall) otto.Value {
+		c.Println("	console.log:", formatForConsole(call.ArgumentList))
+		return otto.UndefinedValue()
+	}
+
 	console := map[string]interface{}{
-		"log": func(call otto.FunctionCall) otto.Value {
-			c.Println("	console.log:", formatForConsole(call.ArgumentList))
-			return otto.UndefinedValue()
-		},
+		"log": logFunc,
 	}
 	vm.Set("console", console)
+
+	vm.Set("Log", logFunc)
 }
