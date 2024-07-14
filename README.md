@@ -9,7 +9,7 @@ Highly adoptable test Framework for large and complex projects, that need a depe
 TestDreadnought is built for you to mold precisely to your project's demands, avoiding the one-size-fits-all approach. It sidesteps dependency issues and the security risks of excessive third-party packages, particularly from JS npm. With no forced structure or excessive rules, you get a clean, efficient, and secure testing environment that’s exactly suited to tackle your unique challenges.
 
 ## Install
-> We will soon provide a docker image for easier installation.
+> We will soon provide a docker image for easier installation. Which will also enable have the extensions in the same folder as the tests. 
 
 Since you need to build the extensions in Go, you need to have Go installed on your machine. Make sure you have the `$GOPATH/bin` in your `$PATH` environment variable - See [instructions](https://stackoverflow.com/a/21012349).  
 Best is to clone the repo, insert your extensions and build and install it via `go install`.

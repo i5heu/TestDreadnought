@@ -32,7 +32,11 @@ func InitializeVM(globalScript, testCaseParentFolder, configDir string) (*otto.O
 	SetUpTestFunction(vm, testCaseParentFolder, configDir)
 
 	// Set up extensions
-	extensions.SetUpExtensions(vm, testCaseParentFolder, configDir)
+	err := extensions.LoadExtensions(vm, testCaseParentFolder, configDir)
+	if err != nil {
+		fmt.Println("Error loading extensions", err)
+		return nil, err
+	}
 
 	return vm, nil
 }
