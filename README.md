@@ -8,6 +8,27 @@ Highly adoptable test Framework for large and complex projects, that need a depe
 
 TestDreadnought is built for you to mold precisely to your project's demands, avoiding the one-size-fits-all approach. It sidesteps dependency issues and the security risks of excessive third-party packages, particularly from JS npm. With no forced structure or excessive rules, you get a clean, efficient, and secure testing environment that’s exactly suited to tackle your unique challenges.
 
+## Install
+> We will soon provide a docker image for easier installation.
+
+Since you need to build the extensions in Go, you need to have Go installed on your machine. Make sure you have the `$GOPATH/bin` in your `$PATH` environment variable - See [instructions](https://stackoverflow.com/a/21012349).  
+Best is to clone the repo, insert your extensions and build and install it via `go install`.
+
+We advise to use a git submodule for the extensions folder, so you can easily update the extensions without having to update the whole TestDreadnought repository while reducing the risk of accidentally pushed sensitive data.
+
+```bash
+git clone https://github.com/i5heu/TestDreadnought.git
+# Optional: Add the extensions folder as a submodule
+cd TestDreadnought
+go install
+```
+Now you can use `TestDreadnought` in your terminal.
+```bash
+TestDreadnought <test-root-directory> <optional: subset path relative to config-directory>
+```
+
+If you pulled the repos for updated, you need to run `go install` again to update the binary.
+
 ## ClI Usage
 There are 2 CLI options, the test-root-directory and the optional "subset path" that is relative to the test-root-directory.  
 If you provide no arguments, TestDreadnought will show this message:
@@ -83,8 +104,6 @@ For more examples checkout the `test_example` folder in this repository.
 Extensions are a way to add custom functionality to TestDreadnought.  
 They are meant for more complex steps and time sensitive measurements, like performance testing.  
 We use Go for extensions since for a lot of tests JS is not precise enough or capable enough in a elegant way and without a lot of third party packages, which are a security risk.  
-
-We advise to use a git submodule for the extensions folder, so you can easily update the extensions without having to update the whole TestDreadnought repository while reducing the risk of accidentally pushed sensitive data.
 
 To build an extension you need to create a `.go` file in the `extensions` folder, using the package name `extensions`.
 After that you need to add your new custom function to the `SetUpExtensions` function of the `extensions.go` file. 
