@@ -150,6 +150,8 @@ console.log(ExampleHelloWorld("FooBar"))
 
 ## List of default functions
 
+TestDreadnought comes with a few default functions that are used to make HTTP requests and compare the result with a file.
+
 ### Get, Post, Patch, Delete
 Will use the Settings variable to get the base URL and headers.  
 
