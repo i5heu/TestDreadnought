@@ -61,6 +61,8 @@ Extensions are a way to add custom functionality to TestDreadnought.
 They are meant for more complex steps and time sensitive measurements, like performance testing.  
 We use Go for extensions since for a lot of tests JS is not precise enough or capable enough in a elegant way and without a lot of third party packages, which are a security risk.  
 
+We advise to use a git submodule for the extensions folder, so you can easily update the extensions without having to update the whole TestDreadnought repository while reducing the risk of accidentally pushed sensitive data.
+
 To build an extension you need to create a `.go` file in the `extensions` folder, using the package name `extensions`.
 After that you need to add your new custom function to the `SetUpExtensions` function of the `extensions.go` file. 
 Pls note that for the `extensions.go` file the MIT license applies. So you can change it without having to open source it.  
